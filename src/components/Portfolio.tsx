@@ -25,19 +25,56 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Secure Messaging System',
+      title: 'Independent Security Audit: Helios E-Voting Platform',
+      duration: 'Recent Project',
+      technologies: ['Python', 'Django', 'PostgreSQL', 'Burp Suite', 'Security Audit'],
+      overview: 'Orchestrated end-to-end deployment of a legacy Python web application by resolving over 20 critical dependency conflicts. Authored comprehensive security audit plan identifying 15+ potential attack vectors.',
+      role: 'Security Researcher & Auditor - Engineered stable build using isolated Python virtual environment, conducted comprehensive threat modeling and vulnerability assessment.',
+      results: 'Successfully resolved 20+ critical dependency conflicts and identified 15+ potential attack vectors against core e-voting logic.',
+      image: 'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'cybersecurity',
+      githubUrl: 'https://github.com/anurag-anand-dev'
+    },
+    {
+      id: 2,
+      title: 'SecureFit: Fitness Application',
+      duration: 'Jun 2024 – Jul 2024',
+      technologies: ['Java', 'React', 'Firebase', 'Security Testing'],
+      overview: 'Engineered a secure full-stack fitness app for 10,000+ concurrent users, achieving API response times under 200ms. Ensured application reliability through 9+ comprehensive testing scenarios.',
+      role: 'Full-Stack Developer & Security Engineer - Implemented secure systems, conducted comprehensive testing including data privacy validation.',
+      results: 'Built scalable app supporting 10,000+ concurrent users with sub-200ms API response times and comprehensive security testing.',
+      image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'web',
+      githubUrl: 'https://github.com/anurag-anand-dev',
+      liveUrl: '#'
+    },
+    {
+      id: 3,
+      title: 'Decentralized Secure Messaging Platform',
       duration: 'Dec 2024 – Present',
-      technologies: ['Blockchain', 'Cryptography', 'Node.js', 'React', 'Solidity'],
-      overview: 'Developed a decentralized blockchain-based messaging platform with end-to-end encryption. Converted messages into hash dust to ensure tamper-proof, highly secure communication.',
-      role: 'Blockchain Developer & Security Engineer - Implemented cryptographic algorithms to maintain privacy and integrity of user data, designed system to prevent unauthorized access and data leaks.',
-      results: 'Created a tamper-proof messaging system with hash dust conversion, ensuring highly secure communication and preventing unauthorized access.',
+      technologies: ['Blockchain', 'Cryptography', 'PoW', 'SHA-512'],
+      overview: 'Designed a decentralized messaging system on blockchain to ensure user data sovereignty and censorship resistance. Engineered Proof-of-Work consensus mechanism with target block time under 10 seconds.',
+      role: 'Blockchain Developer & Cryptographer - Implemented SHA-512 hashing to secure communication ledger against cryptographic attacks, designed PoW consensus mechanism.',
+      results: 'Built decentralized messaging platform with PoW consensus achieving sub-10 second block times and SHA-512 cryptographic security.',
       image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'blockchain',
       githubUrl: 'https://github.com/anurag-anand-dev',
       liveUrl: '#'
     },
     {
-      id: 2,
+      id: 4,
+      title: 'OWASP Juice Shop Analysis',
+      duration: 'Aug 2024 – Dec 2024',
+      technologies: ['Cybersecurity', 'Vulnerability Assessment', 'SQLi', 'XSS'],
+      overview: 'Conducted security assessment identifying 21 vulnerabilities, including 5 critical SQLi and 8 high-risk XSS flaws. Authored detailed remediation reports to improve application security.',
+      role: 'Security Analyst & Penetration Tester - Performed comprehensive vulnerability assessment, identified critical security flaws, and provided detailed remediation guidance.',
+      results: 'Identified 21 vulnerabilities including 5 critical SQL injection and 8 high-risk XSS flaws with comprehensive remediation reports.',
+      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'cybersecurity',
+      githubUrl: 'https://github.com/anurag-anand-dev'
+    },
+    {
+      id: 5,
       title: 'Secure Authentication and Key Management in Fog-based WSNs',
       duration: 'Jan 2024 – May 2024',
       technologies: ['Cybersecurity', 'Fog Computing', 'Reverse Engineering', 'Cryptography'],
@@ -49,7 +86,7 @@ const Portfolio: React.FC = () => {
       githubUrl: 'https://github.com/anurag-anand-dev'
     },
     {
-      id: 3,
+      id: 6,
       title: 'Smart Wheelchair IoT System',
       duration: '5 months',
       technologies: ['ESP32', 'React', 'IoT', 'Arduino', 'Mobile App'],
@@ -62,7 +99,7 @@ const Portfolio: React.FC = () => {
       liveUrl: '#'
     },
     {
-      id: 4,
+      id: 7,
       title: 'Driver Drowsiness Detection',
       duration: '3 months',
       technologies: ['Machine Learning', 'Python', 'OpenCV', 'Arduino', 'Computer Vision'],
@@ -72,31 +109,6 @@ const Portfolio: React.FC = () => {
       image: 'https://images.pexels.com/photos/3954656/pexels-photo-3954656.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'ai',
       githubUrl: 'https://github.com/anurag-anand-dev'
-    },
-    {
-      id: 5,
-      title: 'OWASP Juice Shop - Application Security Testing',
-      duration: 'Aug 2024 – Dec 2024',
-      technologies: ['Cybersecurity', 'Burp Suite', 'OWASP', 'Penetration Testing'],
-      overview: 'Conducted a comprehensive security assessment on OWASP Juice Shop, identifying multiple critical vulnerabilities and demonstrating strong ability to detect security flaws.',
-      role: 'Security Analyst & Penetration Tester - Performed comprehensive security testing, identified critical vulnerabilities, and demonstrated advanced security flaw detection capabilities.',
-      results: 'Successfully identified multiple critical vulnerabilities and demonstrated strong security assessment capabilities through comprehensive testing.',
-      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'cybersecurity',
-      githubUrl: 'https://github.com/anurag-anand-dev'
-    },
-    {
-      id: 6,
-      title: 'E-commerce Web Application',
-      duration: '4 months',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Payment Gateway'],
-      overview: 'Built a full-featured e-commerce platform with user authentication, product management, and secure payment processing.',
-      role: 'Full-Stack Developer - Designed system architecture, implemented features, and managed database optimization.',
-      results: 'Successfully deployed platform handling 500+ products with integrated payment gateway and user management system.',
-      image: 'https://images.pexels.com/photos/6214479/pexels-photo-6214479.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      githubUrl: 'https://github.com/anurag-anand-dev',
-      liveUrl: '#'
     }
   ];
 

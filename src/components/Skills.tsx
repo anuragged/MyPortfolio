@@ -13,29 +13,33 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'C++', color: 'from-blue-400 to-blue-600' },
         { name: 'Java', color: 'from-red-400 to-red-600' },
-        { name: 'HTML/CSS', color: 'from-orange-400 to-orange-600' },
-        { name: 'JavaScript', color: 'from-yellow-300 to-yellow-500' },
         { name: 'Python', color: 'from-green-400 to-green-600' },
+        { name: 'JavaScript', color: 'from-yellow-300 to-yellow-500' },
+        { name: 'HTML/CSS', color: 'from-orange-400 to-orange-600' },
         { name: 'SQL', color: 'from-blue-500 to-blue-700' },
-        { name: 'Arduino IDE', color: 'from-teal-400 to-teal-600' }
+        { name: 'Solidity (Learning)', color: 'from-purple-400 to-purple-600' },
+        { name: 'Rust (Learning)', color: 'from-orange-500 to-orange-700' }
       ]
     },
     {
       icon: Layers,
       title: 'Frameworks & Libraries',
       skills: [
+        { name: 'React', color: 'from-cyan-400 to-cyan-600' },
         { name: 'Node.js', color: 'from-green-400 to-green-600' },
-        { name: 'OWASP ZAP', color: 'from-red-400 to-red-600' },
-        { name: 'Firebase', color: 'from-orange-400 to-orange-600' },
-        { name: 'Tailwind CSS', color: 'from-cyan-400 to-cyan-600' }
+        { name: 'Tailwind CSS', color: 'from-cyan-400 to-cyan-600' },
+        { name: 'Google Firebase', color: 'from-orange-400 to-orange-600' }
       ]
     },
     {
       icon: Database,
-      title: 'Databases',
+      title: 'Databases & Tools',
       skills: [
-        { name: 'SQL Databases', color: 'from-blue-400 to-blue-600' },
-        { name: 'Database Design', color: 'from-green-400 to-green-600' }
+        { name: 'PostgreSQL', color: 'from-blue-400 to-blue-600' },
+        { name: 'Firebase', color: 'from-orange-400 to-orange-600' },
+        { name: 'Git', color: 'from-gray-400 to-gray-600' },
+        { name: 'Arduino IDE', color: 'from-teal-400 to-teal-600' },
+        { name: 'WordPress', color: 'from-blue-500 to-blue-700' }
       ]
     },
     {
@@ -43,35 +47,20 @@ const Skills: React.FC = () => {
       title: 'Cybersecurity Tools',
       skills: [
         { name: 'Burp Suite', color: 'from-red-400 to-red-600' },
-        { name: 'OWASP Methodologies', color: 'from-orange-400 to-orange-600' },
         { name: 'Wireshark', color: 'from-blue-400 to-blue-600' },
-        { name: 'Security Testing', color: 'from-purple-400 to-purple-600' }
-      ]
-    },
-    {
-      icon: Lock,
-      title: 'Development Tools',
-      skills: [
-        { name: 'Git', color: 'from-gray-400 to-gray-600' },
-        { name: 'WordPress', color: 'from-blue-400 to-blue-600' }
-      ]
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud & DevOps',
-      skills: [
-        { name: 'Version Control', color: 'from-gray-400 to-gray-600' },
-        { name: 'Project Management', color: 'from-blue-400 to-blue-600' }
+        { name: 'OWASP', color: 'from-orange-400 to-orange-600' },
+        { name: 'Vulnerability Assessment', color: 'from-purple-400 to-purple-600' }
       ]
     },
     {
       icon: Brain,
-      title: 'Emerging Technologies',
+      title: 'Core Concepts',
       skills: [
-        { name: 'Machine Learning', color: 'from-purple-400 to-purple-600' },
-        { name: 'AI Integration', color: 'from-pink-400 to-pink-600' },
-        { name: 'IoT Development', color: 'from-green-400 to-green-600' },
-        { name: 'Blockchain Concepts', color: 'from-indigo-400 to-indigo-600' }
+        { name: 'Cybersecurity', color: 'from-red-400 to-red-600' },
+        { name: 'Blockchain', color: 'from-purple-400 to-purple-600' },
+        { name: 'Cryptography', color: 'from-blue-400 to-blue-600' },
+        { name: 'System Design', color: 'from-green-400 to-green-600' },
+        { name: 'Threat Analysis', color: 'from-orange-400 to-orange-600' }
       ]
     }
   ];

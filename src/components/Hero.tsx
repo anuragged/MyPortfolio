@@ -158,7 +158,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto"
           >
-            B.Tech CSE Student at BML Munjal University | Building secure digital futures through innovative cybersecurity and blockchain solutions
+            Aspiring Security Research Intern | B.Tech CSE Student at BML Munjal University | Building secure digital futures through innovative cybersecurity and blockchain solutions
           </motion.p>
 
           {/* Tech Stack Icons */}

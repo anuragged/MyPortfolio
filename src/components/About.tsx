@@ -54,7 +54,7 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Anurag Anand</h3>
-                    <p className="text-neon-blue">22 years old</p>
+                    <p className="text-neon-blue">Aspiring Security Research Intern</p>
                     <p className="text-gray-400">CGPA: 7.3/10</p>
                   </div>
                 </div>
@@ -87,20 +87,24 @@ const About: React.FC = () => {
               <div className="glass-card p-6 rounded-2xl border border-cyber-500/10">
                 <div className="flex items-center space-x-3 mb-4">
                   <Award className="w-6 h-6 text-neon-blue" />
-                  <h4 className="text-lg font-semibold text-white">Education & Achievements</h4>
+                  <h4 className="text-lg font-semibold text-white">Achievements & Scholarships</h4>
                 </div>
                 <div className="space-y-3 text-gray-300">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-neon-blue rounded-full"></div>
-                    <span>B.Tech CSE - BML Munjal University (CGPA: 7.6)</span>
+                    <span>75% Merit-based Scholarship at BML Munjal University</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-neon-cyan rounded-full"></div>
-                    <span>Class 12th - 92% (CBSE Board)</span>
+                    <span>Recognized by Care Insurance seniors for innovative fitness app proposal</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-neon-purple rounded-full"></div>
-                    <span>Class 10th - 92% (ICSE Board)</span>
+                    <span>Led design team for 10+ major university events (TEDx, Club Sierra)</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span>Contributed 2,000+ lines of secure code at Care Insurance</span>
                   </div>
                 </div>
               </div>
@@ -142,10 +146,11 @@ const About: React.FC = () => {
                 </div>
                 <div className="space-y-3">
                   {[
-                    { category: 'IoT Certification', skills: 'Introduction to IoT – IIT Bombay' },
-                    { category: 'AI Certification', skills: 'AI For Everyone – DeepLearning.AI' },
-                    { category: 'Cloud Certification', skills: 'IoT Cloud Services – UC San Diego' },
-                    { category: 'Cryptography', skills: 'Number Theory and Cryptography – UC San Diego' }
+                    { category: 'IBM Cybersecurity', skills: 'IBM Cybersecurity Analyst Professional Certificate' },
+                    { category: 'Google Cybersecurity', skills: 'Google Cybersecurity Professional Certificate' },
+                    { category: 'IBM Security', skills: 'IBM Introduction to Cybersecurity' },
+                    { category: 'Cryptography', skills: 'Number Theory and Cryptography (UCSD)' },
+                    { category: 'IoT Cloud Services', skills: 'Internet of Things V2: Cloud Services (UCSD)' }
                   ].map((item, index) => (
                     <div key={index} className="border-l-2 border-neon-blue/30 pl-4">
                       <h5 className="text-white font-medium">{item.category}</h5>
