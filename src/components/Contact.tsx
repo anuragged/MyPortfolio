@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/anurag-anand-dev',
+      href: 'https://github.com/anuragged',
       color: 'hover:text-gray-400'
     },
     {
