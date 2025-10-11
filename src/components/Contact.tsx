@@ -89,12 +89,6 @@ const Contact: React.FC = () => {
       href: 'https://www.linkedin.com/in/anurag-anand-b77797269/',
       color: 'hover:text-blue-400'
     },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com/anurag_anand_dev',
-      color: 'hover:text-sky-400'
-    }
   ];
 
   return (
