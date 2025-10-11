@@ -104,7 +104,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>Contributed 2,000+ lines of secure code at Care Insurance</span>
+                    <span>2,000+ lines of code at Care Insurance</span>
                   </div>
                 </div>
               </div>
