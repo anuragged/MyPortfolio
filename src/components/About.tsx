@@ -92,7 +92,7 @@ const About: React.FC = () => {
                 <div className="space-y-3 text-gray-300">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-neon-blue rounded-full"></div>
-                    <span>25% Merit-based Scholarship at BML Munjal University</span>
+                    <span>75% Merit-based Scholarship at BML Munjal University</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-neon-cyan rounded-full"></div>
