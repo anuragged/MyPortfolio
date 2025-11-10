@@ -55,7 +55,7 @@ const About: React.FC = () => {
                   <div>
                     <h3 className="text-2xl font-bold text-white">Anurag Anand</h3>
                     <p className="text-neon-blue">Software Engineer | Security Research Intern</p>
-                    <p className="text-gray-400">CGPA: 7.6/10</p>
+
                   </div>
                 </div>
                 
@@ -65,7 +65,7 @@ const About: React.FC = () => {
                     <div>
                       <p className="text-white font-medium">B.Tech in Computer Science and Engineering</p>
                       <p className="text-gray-400">BML Munjal University (Aug 2022 – May 2026)</p>
-                      <p className="text-gray-400">CGPA: 7.6/10 | 75% Merit Scholarship</p>
+                      <p className="text-gray-400">75% Merit Scholarship</p>
                     </div>
                   </div>
                   
@@ -103,16 +103,12 @@ const About: React.FC = () => {
                     <span>Led design team for 10+ major university events (TEDx, Club Sierra)</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>2,000+ lines of code contributed at Care Insurance internship</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
                     <span>Top 10% JavaScript Coder & Top 30% Express.js Coder (Credmark)</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                    <span>Supported local NGO with LinkRow platform for digital presence</span>
+                    <span>Supported local NGO for a personal project LinkRow for digital presence</span>
                   </div>
                 </div>
               </div>
@@ -127,7 +123,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     'Cybersecurity',
-                    'Blockchain',
+                    'AI Integration',
                     'Microservices',
                     'Cloud Native',
                     'Docker/Kubernetes',
