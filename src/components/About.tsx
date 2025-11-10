@@ -54,8 +54,8 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Anurag Anand</h3>
-                    <p className="text-neon-blue">Aspiring Security Research Intern</p>
-                    <p className="text-gray-400">CGPA: 7.3/10</p>
+                    <p className="text-neon-blue">Software Engineer | Security Research Intern</p>
+                    <p className="text-gray-400">CGPA: 7.6/10</p>
                   </div>
                 </div>
                 
@@ -63,9 +63,9 @@ const About: React.FC = () => {
                   <div className="flex items-start space-x-3">
                     <GraduationCap className="w-5 h-5 text-neon-blue mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-medium">B.Tech in Computer Science Engineering</p>
-                      <p className="text-gray-400">BML Munjal University (2022-2026)</p>
-                      <p className="text-gray-400">CGPA: 7.6/10</p>
+                      <p className="text-white font-medium">B.Tech in Computer Science and Engineering</p>
+                      <p className="text-gray-400">BML Munjal University (Aug 2022 – May 2026)</p>
+                      <p className="text-gray-400">CGPA: 7.6/10 | 75% Merit Scholarship</p>
                     </div>
                   </div>
                   
@@ -79,7 +79,7 @@ const About: React.FC = () => {
 
                   <div className="flex items-start space-x-3">
                     <Shield className="w-5 h-5 text-neon-blue mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Specializing in Cybersecurity, Blockchain Technology, and Full-Stack Development</p>
+                    <p className="text-gray-300">Versatile Software Engineer skilled in distributed systems, cloud-based development (Docker, Kubernetes), secure system design, and modern full-stack technologies</p>
                   </div>
                 </div>
               </div>
@@ -104,7 +104,15 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>2,000+ lines of code at Care Insurance</span>
+                    <span>2,000+ lines of code contributed at Care Insurance internship</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span>Top 10% JavaScript Coder & Top 30% Express.js Coder (Credmark)</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                    <span>Supported local NGO with LinkRow platform for digital presence</span>
                   </div>
                 </div>
               </div>
@@ -120,10 +128,12 @@ const About: React.FC = () => {
                   {[
                     'Cybersecurity',
                     'Blockchain',
-                    'Frontend',
-                    'Design',
-                    'Arduino',
-                    'Penetration Testing'
+                    'Microservices',
+                    'Cloud Native',
+                    'Docker/Kubernetes',
+                    'Full Stack Dev',
+                    'System Design',
+                    'DevOps'
                   ].map((item, index) => (
                     <motion.div
                       key={item}
@@ -146,11 +156,13 @@ const About: React.FC = () => {
                 </div>
                 <div className="space-y-3">
                   {[
-                    { category: 'IBM Cybersecurity', skills: 'IBM Cybersecurity Analyst Professional Certificate' },
-                    { category: 'Google Cybersecurity', skills: 'Google Cybersecurity Professional Certificate' },
-                    { category: 'IBM Security', skills: 'IBM Introduction to Cybersecurity' },
-                    { category: 'Cryptography', skills: 'Number Theory and Cryptography (UCSD)' },
-                    { category: 'IoT Cloud Services', skills: 'Internet of Things V2: Cloud Services (UCSD)' }
+                    { category: 'Google Cybersecurity', skills: 'Google Cybersecurity Specialization (Coursera)' },
+                    { category: 'Cloud Native', skills: 'Docker, Kubernetes & OpenShift (IBM)' },
+                    { category: 'Microservices', skills: 'Application Dev using Microservices & Serverless (IBM)' },
+                    { category: 'Security', skills: 'Security and Authentication (Microsoft)' },
+                    { category: 'Cryptography', skills: 'Number Theory & Cryptography (UCSD)' },
+                    { category: 'IoT', skills: 'IoT Cloud Services (UCSD)' },
+                    { category: 'AI', skills: 'AI for Everyone (DeepLearning.AI)' }
                   ].map((item, index) => (
                     <div key={index} className="border-l-2 border-neon-blue/30 pl-4">
                       <h5 className="text-white font-medium">{item.category}</h5>

@@ -11,14 +11,28 @@ const Skills: React.FC = () => {
       icon: Code,
       title: 'Programming Languages',
       skills: [
-        { name: 'C++', color: 'from-blue-400 to-blue-600' },
+        { name: 'C/C++', color: 'from-blue-400 to-blue-600' },
         { name: 'Java', color: 'from-red-400 to-red-600' },
         { name: 'Python', color: 'from-green-400 to-green-600' },
         { name: 'JavaScript', color: 'from-yellow-300 to-yellow-500' },
-        { name: 'HTML/CSS', color: 'from-orange-400 to-orange-600' },
         { name: 'SQL', color: 'from-blue-500 to-blue-700' },
+        { name: 'HTML/CSS', color: 'from-orange-400 to-orange-600' },
         { name: 'Solidity (Learning)', color: 'from-purple-400 to-purple-600' },
         { name: 'Rust (Learning)', color: 'from-orange-500 to-orange-700' }
+      ]
+    },
+    {
+      icon: Cloud,
+      title: 'Systems & Cloud',
+      skills: [
+        { name: 'Docker', color: 'from-blue-400 to-blue-600' },
+        { name: 'Kubernetes', color: 'from-blue-500 to-blue-700' },
+        { name: 'OpenShift', color: 'from-red-400 to-red-600' },
+        { name: 'Linux', color: 'from-yellow-400 to-yellow-600' },
+        { name: 'Serverless', color: 'from-purple-400 to-purple-600' },
+        { name: 'Microservices', color: 'from-green-400 to-green-600' },
+        { name: 'Firebase', color: 'from-orange-400 to-orange-600' },
+        { name: 'CI/CD', color: 'from-cyan-400 to-cyan-600' }
       ]
     },
     {
@@ -27,40 +41,48 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'React', color: 'from-cyan-400 to-cyan-600' },
         { name: 'Node.js', color: 'from-green-400 to-green-600' },
+        { name: 'Next.js', color: 'from-gray-400 to-gray-600' },
+        { name: 'Flask', color: 'from-gray-500 to-gray-700' },
+        { name: 'Django', color: 'from-green-500 to-green-700' },
         { name: 'Tailwind CSS', color: 'from-cyan-400 to-cyan-600' },
-        { name: 'Google Firebase', color: 'from-orange-400 to-orange-600' }
+        { name: 'LangChain', color: 'from-purple-400 to-purple-600' }
       ]
     },
     {
       icon: Database,
-      title: 'Databases & Tools',
+      title: 'Databases',
       skills: [
         { name: 'PostgreSQL', color: 'from-blue-400 to-blue-600' },
-        { name: 'Firebase', color: 'from-orange-400 to-orange-600' },
-        { name: 'Git', color: 'from-gray-400 to-gray-600' },
-        { name: 'Arduino IDE', color: 'from-teal-400 to-teal-600' },
-        { name: 'WordPress', color: 'from-blue-500 to-blue-700' }
+        { name: 'MySQL', color: 'from-blue-500 to-blue-700' },
+        { name: 'MongoDB', color: 'from-green-400 to-green-600' },
+        { name: 'Firebase', color: 'from-orange-400 to-orange-600' }
       ]
     },
     {
       icon: Shield,
-      title: 'Cybersecurity Tools',
+      title: 'Security & DevOps',
       skills: [
-        { name: 'Burp Suite', color: 'from-red-400 to-red-600' },
+        { name: 'VAPT', color: 'from-red-400 to-red-600' },
+        { name: 'Burp Suite', color: 'from-red-500 to-red-700' },
+        { name: 'Nmap', color: 'from-orange-400 to-orange-600' },
         { name: 'Wireshark', color: 'from-blue-400 to-blue-600' },
-        { name: 'OWASP', color: 'from-orange-400 to-orange-600' },
-        { name: 'Vulnerability Assessment', color: 'from-purple-400 to-purple-600' }
+        { name: 'OWASP Top 10', color: 'from-orange-500 to-orange-700' },
+        { name: 'Cryptography (AES, SHA-512)', color: 'from-purple-400 to-purple-600' },
+        { name: 'Git/GitHub', color: 'from-gray-400 to-gray-600' }
       ]
     },
     {
       icon: Brain,
       title: 'Core Concepts',
       skills: [
+        { name: 'Distributed Systems', color: 'from-blue-400 to-blue-600' },
+        { name: 'Cloud Automation', color: 'from-cyan-400 to-cyan-600' },
         { name: 'Cybersecurity', color: 'from-red-400 to-red-600' },
         { name: 'Blockchain', color: 'from-purple-400 to-purple-600' },
-        { name: 'Cryptography', color: 'from-blue-400 to-blue-600' },
+        { name: 'Cryptography', color: 'from-blue-500 to-blue-700' },
         { name: 'System Design', color: 'from-green-400 to-green-600' },
-        { name: 'Threat Analysis', color: 'from-orange-400 to-orange-600' }
+        { name: 'Threat Analysis', color: 'from-orange-400 to-orange-600' },
+        { name: 'AI Integration', color: 'from-pink-400 to-pink-600' }
       ]
     }
   ];
@@ -83,11 +105,11 @@ const Skills: React.FC = () => {
             Technical Arsenal
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Comprehensive technical expertise across cybersecurity, blockchain, full-stack development, and emerging technologies
+            Comprehensive expertise in distributed systems, cloud-native development, cybersecurity, and modern full-stack technologies
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -165,8 +187,8 @@ const Skills: React.FC = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-neon-blue to-cyber-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-neon-blue/20">
                   <Cpu className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Blockchain</h4>
-                <p className="text-gray-300 text-sm">Smart Contracts, DApps, Solidity, Web3 Development</p>
+                <h4 className="text-lg font-semibold text-white mb-2">Cloud Native</h4>
+                <p className="text-gray-300 text-sm">Docker, Kubernetes, Microservices, Serverless Architecture</p>
               </motion.div>
               
               <motion.div 
@@ -176,8 +198,8 @@ const Skills: React.FC = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-400/20">
                   <Cpu className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Frontend & Design</h4>
-                <p className="text-gray-300 text-sm">React, JavaScript, UI/UX Design, Responsive Web Development, Modern CSS</p>
+                <h4 className="text-lg font-semibold text-white mb-2">Full Stack Development</h4>
+                <p className="text-gray-300 text-sm">React, Node.js, Python, Modern JavaScript, RESTful APIs, Database Design</p>
               </motion.div>
             </div>
           </div>

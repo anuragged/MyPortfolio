@@ -11,8 +11,9 @@ const Hero: React.FC = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = [
+    'Software Engineer',
     'Cybersecurity Specialist',
-    'Blockchain Developer', 
+    'Cloud Native Developer',
     'Full Stack Developer',
     'Security Researcher'
   ];
@@ -158,7 +159,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto"
           >
-            Aspiring Security Research Intern | B.Tech CSE Student at BML Munjal University | Building secure digital futures through innovative cybersecurity and blockchain solutions
+            Software Engineer & Security Research Intern | B.Tech CSE at BML Munjal University | Specialized in distributed systems, cloud-native development, and secure software solutions
           </motion.p>
 
           {/* Tech Stack Icons */}

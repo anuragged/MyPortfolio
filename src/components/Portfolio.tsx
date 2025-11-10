@@ -25,53 +25,65 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Independent Security Audit: Helios E-Voting Platform',
-      duration: 'Recent Project',
-      technologies: ['Python', 'Django', 'PostgreSQL', 'Burp Suite', 'Security Audit'],
-      overview: 'Orchestrated end-to-end deployment of a legacy Python web application by resolving over 20 critical dependency conflicts. Authored comprehensive security audit plan identifying 15+ potential attack vectors.',
-      role: 'Security Researcher & Auditor - Engineered stable build using isolated Python virtual environment, conducted comprehensive threat modeling and vulnerability assessment.',
-      results: 'Successfully resolved 20+ critical dependency conflicts and identified 15+ potential attack vectors against core e-voting logic.',
-      image: 'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'cybersecurity',
-      githubUrl: 'https://github.com/anurag-anand-dev'
+      title: 'Cloud-Native Microservices Deployment',
+      duration: 'IBM/Coursera Certification',
+      technologies: ['Docker', 'Kubernetes', 'OpenShift', 'Node.js', 'Python', 'CI/CD'],
+      overview: 'Containerized a multi-tier application using Docker and deployed it with Kubernetes & OpenShift. Built and deployed multiple microservices on serverless infrastructure for scalability. Utilized Git & automation tools for cloud-native deployment and monitoring.',
+      role: 'Cloud Native Developer - Designed and implemented containerized applications, automated deployments with CI/CD pipelines, and deployed rolling updates ensuring zero-downtime and cloud resilience.',
+      results: 'Successfully containerized multi-tier app with Docker, deployed microservices on serverless infrastructure, and implemented automated cloud-native deployment with Git and CI/CD tools.',
+      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'cloud',
+      githubUrl: 'https://github.com/anuragged'
     },
     {
       id: 2,
-      title: 'SecureFit: Fitness Application',
-      duration: 'Jun 2024 – Jul 2024',
-      technologies: ['Java', 'React', 'Firebase', 'Security Testing'],
-      overview: 'Engineered a secure full-stack fitness app for 10,000+ concurrent users, achieving API response times under 200ms. Ensured application reliability through 9+ comprehensive testing scenarios.',
-      role: 'Full-Stack Developer & Security Engineer - Implemented secure systems, conducted comprehensive testing including data privacy validation.',
-      results: 'Built scalable app supporting 10,000+ concurrent users with sub-200ms API response times and comprehensive security testing.',
-      image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      githubUrl: 'https://github.com/anurag-anand-dev',
-      liveUrl: '#'
+      title: 'Independent Security Audit: Helios E-Voting Platform',
+      duration: 'Security Research Project',
+      technologies: ['Python', 'Django', 'PostgreSQL', 'Burp Suite', 'Threat Modeling'],
+      overview: 'Restored and deployed a legacy Python web application, resolving 15+ critical dependency conflicts. Designed and implemented detailed threat model and risk assessment plan. Discovered 15+ vulnerabilities including logic flaws, improper authentication, and injection vectors.',
+      role: 'Security Researcher & Auditor - Engineered stable build using isolated Python virtual environment, conducted comprehensive threat modeling and vulnerability assessment, authored detailed remediation reports.',
+      results: 'Successfully resolved 15+ critical dependency conflicts and identified 15+ vulnerabilities including logic flaws, authentication issues, and injection vectors with comprehensive remediation guidance.',
+      image: 'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'cybersecurity',
+      githubUrl: 'https://github.com/anuragged'
     },
     {
       id: 3,
-      title: 'Decentralized Secure Messaging Platform',
-      duration: 'Dec 2024 – Present',
-      technologies: ['Blockchain', 'Cryptography', 'PoW', 'SHA-512'],
-      overview: 'Designed a decentralized messaging system on blockchain to ensure user data sovereignty and censorship resistance. Engineered Proof-of-Work consensus mechanism with target block time under 10 seconds.',
-      role: 'Blockchain Developer & Cryptographer - Implemented SHA-512 hashing to secure communication ledger against cryptographic attacks, designed PoW consensus mechanism.',
-      results: 'Built decentralized messaging platform with PoW consensus achieving sub-10 second block times and SHA-512 cryptographic security.',
-      image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'blockchain',
-      githubUrl: 'https://github.com/anurag-anand-dev',
+      title: 'SecureFit: AI-Powered Fitness Application',
+      duration: 'Jun 2024 – Jul 2024 | Care Insurance',
+      technologies: ['Java', 'React', 'Firebase', 'Gemini AI', 'AES Encryption', 'REST APIs'],
+      overview: 'Built a secure full-stack system targeting 18-35 demographic, engineered for 10,000+ concurrent users with AES-encrypted Firebase backend and authentication. Integrated Gemini AI dashboard generating personalized diet plans analyzing 100+ metrics with 95% prediction accuracy. Engineered 5+ key features, contributed 2,000+ lines of code, and implemented offline-first architecture.',
+      role: 'Full-Stack Developer & Security Engineer - Designed secure authentication, implemented AES encryption, integrated AI-powered dashboard, collaborated with senior engineers to debug critical issues and refine backend logic.',
+      results: 'Built scalable app supporting 10,000+ concurrent users with sub-200ms API response times, AES encryption, AI-powered personalized insights with 95% accuracy, and comprehensive security testing.',
+      image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'web',
+      githubUrl: 'https://github.com/anuragged',
       liveUrl: '#'
     },
     {
       id: 4,
-      title: 'OWASP Juice Shop Analysis',
+      title: 'Decentralized Secure Messaging Platform',
+      duration: 'Dec 2024 – Present',
+      technologies: ['Blockchain', 'Cryptography', 'PoW', 'SHA-512', 'Python'],
+      overview: 'Created a blockchain-based messaging system ensuring complete data privacy, integrity, and censorship resistance. Implemented Proof-of-Work consensus with block times under 10 seconds and secured ledgers using SHA-512 encryption.',
+      role: 'Blockchain Developer & Cryptographer - Designed decentralized architecture ensuring user data sovereignty, implemented SHA-512 hashing to secure communication ledger against cryptographic attacks, engineered efficient PoW consensus mechanism.',
+      results: 'Built decentralized messaging platform with PoW consensus achieving sub-10 second block times and SHA-512 cryptographic security ensuring complete data privacy and censorship resistance.',
+      image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'blockchain',
+      githubUrl: 'https://github.com/anuragged',
+      liveUrl: '#'
+    },
+    {
+      id: 5,
+      title: 'OWASP Juice Shop Security Assessment',
       duration: 'Aug 2024 – Dec 2024',
-      technologies: ['Cybersecurity', 'Vulnerability Assessment', 'SQLi', 'XSS'],
-      overview: 'Conducted security assessment identifying 21 vulnerabilities, including 5 critical SQLi and 8 high-risk XSS flaws. Authored detailed remediation reports to improve application security.',
-      role: 'Security Analyst & Penetration Tester - Performed comprehensive vulnerability assessment, identified critical security flaws, and provided detailed remediation guidance.',
-      results: 'Identified 21 vulnerabilities including 5 critical SQL injection and 8 high-risk XSS flaws with comprehensive remediation reports.',
+      technologies: ['Cybersecurity', 'VAPT', 'Burp Suite', 'SQLi', 'XSS', 'OWASP'],
+      overview: 'Conducted comprehensive Vulnerability Assessment and Penetration Testing (VAPT), identifying 21 vulnerabilities including 5 critical SQL injection and 8 high-risk XSS flaws. Authored detailed remediation reports with mitigation strategies to strengthen overall application security.',
+      role: 'Security Analyst & Penetration Tester - Performed comprehensive vulnerability assessment using industry-standard tools, identified critical security flaws across authentication, authorization, and injection vectors, provided detailed remediation guidance with mitigation strategies.',
+      results: 'Identified 21 vulnerabilities including 5 critical SQL injection and 8 high-risk XSS flaws with comprehensive remediation reports and actionable mitigation strategies.',
       image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'cybersecurity',
-      githubUrl: 'https://github.com/anurag-anand-dev'
+      githubUrl: 'https://github.com/anuragged'
     },
     {
       id: 5,
@@ -100,25 +112,26 @@ const Portfolio: React.FC = () => {
     },
     {
       id: 7,
-      title: 'Driver Drowsiness Detection',
-      duration: '3 months',
-      technologies: ['Machine Learning', 'Python', 'OpenCV', 'Arduino', 'Computer Vision'],
-      overview: 'Developed an ML-powered system to detect driver drowsiness using computer vision and trigger alert mechanisms.',
-      role: 'ML Engineer & Hardware Developer - Built detection algorithms, trained models, and integrated Arduino-based alert system.',
-      results: 'Achieved 92% accuracy in drowsiness detection with real-time processing and immediate alert system activation.',
+      title: 'Driver Drowsiness Detection System',
+      duration: 'Machine Learning Project',
+      technologies: ['Machine Learning', 'Python', 'OpenCV', 'Arduino', 'Computer Vision', 'EAR Algorithm'],
+      overview: 'Implemented a real-time blink detection model using facial landmarks & EAR (Eye Aspect Ratio) algorithm with less than 1 second latency. Integrated Arduino buzzer module for instant driver alerts.',
+      role: 'ML Engineer & Hardware Developer - Built real-time detection algorithms using computer vision, trained blink detection models with facial landmarks, integrated Arduino-based alert system for immediate response.',
+      results: 'Achieved real-time drowsiness detection with sub-1 second latency using facial landmarks & EAR algorithm, integrated Arduino buzzer for instant alerts.',
       image: 'https://images.pexels.com/photos/3954656/pexels-photo-3954656.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'ai',
-      githubUrl: 'https://github.com/anurag-anand-dev'
+      githubUrl: 'https://github.com/anuragged'
     }
   ];
 
   const categories = [
     { key: 'all', label: 'All Projects', icon: Code },
-    { key: 'blockchain', label: 'Blockchain', icon: Cpu },
+    { key: 'cloud', label: 'Cloud Native', icon: Cpu },
     { key: 'cybersecurity', label: 'Cybersecurity', icon: Shield },
+    { key: 'blockchain', label: 'Blockchain', icon: Cpu },
+    { key: 'web', label: 'Web Development', icon: Code },
     { key: 'iot', label: 'IoT', icon: Globe },
-    { key: 'ai', label: 'AI/ML', icon: Brain },
-    { key: 'web', label: 'Web Development', icon: Code }
+    { key: 'ai', label: 'AI/ML', icon: Brain }
   ];
 
   const filteredProjects = filter === 'all' 
