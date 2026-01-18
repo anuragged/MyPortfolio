@@ -1,185 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { GraduationCap, Shield, Brain, Code, Award, MapPin, Calendar, User } from 'lucide-react';
 
 const About: React.FC = () => {
-  const { t } = useTranslation();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
-
   return (
-    <section id="about" className="py-20 bg-black relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 cyber-grid opacity-5"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-6xl mx-auto"
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-neon-blue to-neon-cyan bg-clip-text text-transparent neon-text"
-          >
-            About Me
-          </motion.h2>
+    <section id="about" className="py-32 md:py-48 bg-background relative overflow-hidden">
+      {/* Decorative Splash */}
+      <div className="absolute top-0 left-12 w-64 h-64 bg-brand-light/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div variants={itemVariants} className="space-y-8">
-              <div className="glass-card p-8 rounded-2xl border border-cyber-500/10">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyber-600 to-cyber-700 rounded-full flex items-center justify-center border border-neon-blue/20">
-                    <User className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Anurag Anand</h3>
-                    <p className="text-neon-blue">Software Engineer | Security Research Intern</p>
+      <div className="container-luxury relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 items-start">
+          <div className="lg:w-1/3">
+            <span className="text-sm font-mono text-brand-main uppercase tracking-widest border-b border-brand-main/20 pb-2 block">
+              01 / Philosophy
+            </span>
+          </div>
 
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <GraduationCap className="w-5 h-5 text-neon-blue mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-white font-medium">B.Tech in Computer Science and Engineering</p>
-                      <p className="text-gray-400">BML Munjal University (Aug 2022 – May 2026)</p>
-                      <p className="text-gray-400">75% Merit Scholarship</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="w-5 h-5 text-neon-blue mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-white font-medium">Location</p>
-                      <p className="text-gray-400">Gurgaon, Haryana, India</p>
-                    </div>
-                  </div>
+          <div className="lg:w-2/3">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <h3 className="text-4xl md:text-6xl font-display font-medium text-white mb-12 leading-tight">
+                An engineer who ships <span className="text-brand-main">production-grade systems</span>, obsesses over performance, and enjoys building products from scratch<span className="text-brand-light">.</span>
+              </h3>
 
-                  <div className="flex items-start space-x-3">
-                    <Shield className="w-5 h-5 text-neon-blue mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Versatile Software Engineer skilled in distributed systems, cloud-based development (Docker, Kubernetes), secure system design, and modern full-stack technologies</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="glass-card p-6 rounded-2xl border border-cyber-500/10">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Award className="w-6 h-6 text-neon-blue" />
-                  <h4 className="text-lg font-semibold text-white">Achievements & Scholarships</h4>
-                </div>
-                <div className="space-y-3 text-gray-300">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-neon-blue rounded-full"></div>
-                    <span>75% Merit-based Scholarship at BML Munjal University</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-neon-cyan rounded-full"></div>
-                    <span>Recognized by Care Insurance seniors for innovative fitness app proposal</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-neon-purple rounded-full"></div>
-                    <span>Led design team for 10+ major university events (TEDx, Club Sierra)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <span>Top 10% JavaScript Coder & Top 30% Express.js Coder (Credmark)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                    <span>Supported local NGO for a personal project LinkRow for digital presence</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="space-y-6">
-              <div className="glass-card p-6 rounded-2xl border border-cyber-500/10">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Brain className="w-6 h-6 text-neon-blue" />
-                  <h4 className="text-lg font-semibold text-white">Core Expertise</h4>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    'Cybersecurity',
-                    'AI Integration',
-                    'Microservices',
-                    'Cloud Native',
-                    'Docker/Kubernetes',
-                    'Full Stack Dev',
-                    'System Design',
-                    'DevOps'
-                  ].map((item, index) => (
-                    <motion.div
-                      key={item}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(0, 212, 255, 0.1)' }}
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-gradient-to-r from-cyber-600/10 to-cyber-700/10 rounded-lg p-3 text-center border border-cyber-500/20 cursor-pointer"
-                    >
-                      <span className="text-neon-cyan text-sm font-medium">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="glass-card p-6 rounded-2xl border border-cyber-500/10">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Code className="w-6 h-6 text-neon-blue" />
-                  <h4 className="text-lg font-semibold text-white">Certifications & Skills</h4>
-                </div>
-                <div className="space-y-3">
-                  {[
-                    { category: 'Google Cybersecurity', skills: 'Google Cybersecurity Specialization (Coursera)' },
-                    { category: 'Cloud Native', skills: 'Docker, Kubernetes & OpenShift (IBM)' },
-                    { category: 'Microservices', skills: 'Application Dev using Microservices & Serverless (IBM)' },
-                    { category: 'Security', skills: 'Security and Authentication (Microsoft)' },
-                    { category: 'Cryptography', skills: 'Number Theory & Cryptography (UCSD)' },
-                    { category: 'IoT', skills: 'IoT Cloud Services (UCSD)' },
-                    { category: 'AI', skills: 'AI for Everyone (DeepLearning.AI)' }
-                  ].map((item, index) => (
-                    <div key={index} className="border-l-2 border-neon-blue/30 pl-4">
-                      <h5 className="text-white font-medium">{item.category}</h5>
-                      <p className="text-gray-400 text-sm">{item.skills}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="glass-card p-6 rounded-2xl border border-cyber-500/10 bg-gradient-to-r from-black/40 to-black/60 relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/3 to-neon-cyan/3"></div>
-                <p className="text-gray-300 text-lg leading-relaxed relative z-10 text-center">
-                  <span className="text-neon-blue font-medium">"Know something about everything and everything about something"</span> - I follow that.
+              <div className="prose prose-xl prose-invert text-secondary font-light max-w-none space-y-8">
+                <p>
+                  I am a results-oriented software engineer with strong foundations in backend engineering, secure system design, and full-stack development.
+                  I have built and audited systems serving <strong className="text-white">10,000+ users</strong>, implemented <strong className="text-white">AES-secured authentication</strong>, and designed <strong className="text-white">low-latency APIs</strong>.
                 </p>
-              </motion.div>
+                <p>
+                  Beyond engineering, I have led teams in fast-moving environments and built <strong className="text-white">LinkRow</strong>, a platform aimed at digitising 10M+ Indian SMBs.
+                  I believe in blending deep technical execution with clear business strategy to create work that matters.
+                </p>
+              </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
