@@ -57,7 +57,7 @@ const Experience: React.FC = () => {
         },
         {
             company: "Care Insurance",
-            role: "Intern at IT Deparment",
+            role: "Intern at IT Department",
             period: "Jun 2024 – Jul 2024",
             description: "Engineered enterprise-grade web and mobile systems serving 10,000+ concurrent users. Focused on backend performance, effectively reducing latency to <200ms, and implemented AES encryption standards to secure sensitive PII data within a strict Agile environment."
         },
