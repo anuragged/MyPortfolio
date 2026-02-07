@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
         {
             company: "Bluvin Solutions",
             role: "Mobile Application Developer Intern",
-            period: "Jan 2026 – Present",
+            period: "Jan 2026",
             description: "Reporting directly to the Director to architect and ship Flutter-based mobile applications. Ownership spans the entire product lifecycle—from translating UI designs into pixel-perfect code to managing final App Store deployment. Built 1,500+ lines of production code, optimized API connectivity, and reduced feature build times by ~30%."
         },
         {
