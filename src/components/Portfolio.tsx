@@ -6,8 +6,9 @@ interface Project {
   title: string;
   category: string;
   description: string;
+  bullets?: string[];
   tech: string[];
-  links: { github?: string; live?: string };
+  links: { github?: string; live?: string; apk?: string };
   stats?: string;
   image?: string;
   imageFit?: string; // 'object-cover' | 'object-contain'
@@ -181,15 +182,15 @@ const ProjectModal = ({
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center text-white/30">
-              <span className="text-4xl mb-2">🖼️</span>
-              <span className="font-mono text-sm uppercase tracking-widest">No Preview Available</span>
+              <span className="text-4xl mb-2">⚡</span>
+              <span className="font-mono text-sm uppercase tracking-widest text-center">Engineered Architecture</span>
             </div>
           )}
         </div>
 
         {/* Content Section */}
         <div className="w-full md:w-5/12 p-8 md:p-12 overflow-y-auto bg-surface">
-          <div className="mb-8">
+          <div className="mb-6">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-mono text-brand-main uppercase tracking-widest px-2 py-1 bg-brand-main/10 rounded border border-brand-main/20">
                 {project.category}
@@ -200,12 +201,27 @@ const ProjectModal = ({
                 </span>
               )}
             </div>
-            <h2 className="text-4xl font-display font-bold text-white mb-6">
+            <h2 className="text-4xl font-display font-bold text-white mb-4">
               {project.title}
             </h2>
-            <p className="text-secondary leading-relaxed mb-8">
+            <p className="text-secondary leading-relaxed mb-6">
               {project.description}
             </p>
+
+            {/* Resume Bullets / Key Highlights */}
+            {project.bullets && project.bullets.length > 0 && (
+              <div className="mb-6 pt-4 border-t border-white/5">
+                <h5 className="text-xs font-mono text-brand-muted uppercase tracking-widest mb-3">Key Highlights</h5>
+                <ul className="space-y-2.5">
+                  {project.bullets.map((bullet, idx) => (
+                    <li key={idx} className="text-secondary/80 text-sm font-light flex items-start gap-2.5 leading-relaxed">
+                      <span className="text-brand-main mt-1 text-xs select-none">▸</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           <div className="mb-8">
@@ -223,6 +239,12 @@ const ProjectModal = ({
             {project.links.live && (
               <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full py-4 bg-brand-main text-background font-medium rounded hover:bg-brand-light transition-colors">
                 <span>Live Demo</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            )}
+            {project.links.apk && (
+              <a href={project.links.apk} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full py-4 bg-brand-main text-background font-medium rounded hover:bg-brand-light transition-colors">
+                <span>Download APK</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             )}
@@ -244,30 +266,58 @@ const Portfolio: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: 'SecureFit',
-      category: 'Health Tech',
+      title: 'GestureApp',
+      category: 'Android Accessibility & Automation',
       description:
-        'AI-Integrated Fitness Platform aimed to serve 10,000+ concurrent users. Implemented AES-encrypted authentication and <2s Gemini AI responses. Recognized by Care Insurance.',
-      tech: ['React', 'Firebase', 'Gemini AI', 'AES'],
+        'A Flutter + native Kotlin application for system-level gesture automation using accessibility services, foreground services, overlays, and background execution with responsive gesture recognition.',
+      bullets: [
+        'Built a Flutter + native Kotlin application for system-level gesture automation using accessibility services, foreground services, overlays, and background execution, with gesture recognition optimized for responsive interaction.',
+        'Implemented a 1-Dollar Unistroke Recognizer achieving 95%+ accuracy with sub-10ms latency; added Hive offline storage and a Laravel admin panel.'
+      ],
+      tech: ['Flutter', 'Native Kotlin', 'Android Accessibility', '1$ Unistroke', 'Hive', 'Laravel'],
+      links: {
+        github: 'https://github.com/anuragged/GestureApp',
+        apk: 'https://github.com/anuragged/GestureApp/releases'
+      },
+      stats: '95%+ Acc • <10ms',
+    },
+    {
+      title: 'DocTalk AI',
+      category: 'Grounded Document Intelligence',
+      description:
+        'A high-performance RAG platform built using Django and pgvector for grounded question answering across 5 document formats, utilizing context-aware vector retrieval.',
+      bullets: [
+        'Built a RAG platform using Django and pgvector for grounded question answering across 5 document formats, with vector search for context-aware retrieval.',
+        'Reduced retrieval and inference costs by approximately 40% by optimizing document chunking and embedding pipelines.'
+      ],
+      tech: ['Django', 'pgvector', 'Python', 'RAG', 'Vector Search', 'Embeddings'],
+      links: {
+        github: 'https://github.com/anuragged/doc-talk-ai.git',
+        live: 'https://github.com/anuragged/doc-talk-ai.git'
+      },
+      stats: '-40% Costs • 5 Formats',
+      image: '/Images/doc-talk-1.png',
+      imageFit: 'object-contain',
+      gallery: ['/Images/doc-talk-1.png', '/Images/doc-talk-2.png'],
+    },
+    {
+      title: 'SecureFit',
+      category: 'Health Tech & Security',
+      description:
+        'Enterprise healthcare and fitness application serving 10,000+ users. Optimized APIs to sub-200ms latency using AES encryption for secure handling of sensitive healthcare information.',
+      bullets: [
+        'Developed backend and frontend components for SecureFit, aimed at serving 10,000+ users, and optimized APIs to sub-200ms latency using AES encryption for secure handling of sensitive healthcare information.',
+        'Integrated Gemini AI for rapid intelligent health insights with <2s response times, recognized by Care Health Insurance.'
+      ],
+      tech: ['React', 'Node.js', 'Firebase', 'AES Encryption', 'Gemini AI', 'REST APIs'],
       links: {
         github: 'https://github.com/anuragged/SecureFIt.git',
         live: 'https://securefitdemo.netlify.app/',
       },
-      stats: '10k+ Users',
+      stats: '10k+ Users • <200ms',
       image: '/Images/secure-fit.png',
       imageFit: 'object-contain',
-      gallery: ['/Images/secure-fit.png'], // Add more screenshots here if available
-    },
-    {
-      title: 'Doc-Talk-AI',
-      category: 'AI / RAG',
-      description:
-        'Grounded document assistant supporting 5+ formats. Reduced information retrieval time by 95% using context-aware top-5 grounded responses.',
-      tech: ['Django', 'Python', 'LangChain', 'pgvector'],
-      links: { github: 'https://github.com/anuragged/doc-talk-ai.git' },
-      stats: '<200ms Latency',
-      image: '/Images/doc-talk-1.png',
-      gallery: ['/Images/doc-talk-2.png'],
+      gallery: ['/Images/secure-fit.png'],
     },
     {
       title: 'Invoice QC',
@@ -275,9 +325,7 @@ const Portfolio: React.FC = () => {
       description:
         'Automated Invoice Quality Control Service designed to process and validate invoices. Uses OCR and PDF processing to extract key data points, validating against predefined rules to ensure compliance and accuracy.',
       tech: ['Python', 'Docker', 'OCR', 'PDF Processing'],
-      links: { github: 'https://github.com/anuragged/Invoice-QC-Service' }, // Placeholder link
-      imageFit: 'object-contain',
-      gallery: [], // Needs images
+      links: { github: 'https://github.com/anuragged/Invoice-QC-Service' },
     },
     {
       title: 'CS Messaging',
@@ -285,22 +333,8 @@ const Portfolio: React.FC = () => {
       description:
         'High-performance Customer Support Messaging Application. Features real-time multi-agent chat, urgency prioritization, canned replies, and robust search capabilities, enabling efficient handling of high message volumes.',
       tech: ['React', 'Node.js', 'REST API'],
-      links: { github: 'https://github.com/anuragged/CS-Messaging-App' }, // Placeholder link
+      links: { github: 'https://github.com/anuragged/CS-Messaging-App' },
       stats: 'Multi-Agent',
-      imageFit: 'object-contain',
-      gallery: [], // Needs images
-    },
-    {
-      title: 'SecureBank',
-      category: 'Security Lab',
-      description:
-        'Banking & Forensics Security Lab simulating 12+ OWASP vulnerabilities. Automated forensic analysis of 500MB logs in under 30 seconds.',
-      tech: ['React', 'Node.js', 'Python'],
-      links: {
-        github: 'https://github.com/anuragged/SecureBank-VulnerabilityTest.git',
-      },
-      image: '/projects/securebank-preview.png',
-      gallery: ['/projects/securebank-preview.png'],
     },
     {
       title: 'LinkRow',
@@ -311,8 +345,6 @@ const Portfolio: React.FC = () => {
       links: {
         github: 'https://github.com/anuragged/linkrow-smart-shops-grow.git',
       },
-      image: '/projects/linkrow-preview.png',
-      gallery: ['/projects/linkrow-preview.png'],
     },
   ];
 

@@ -38,19 +38,19 @@ const Contact: React.FC = () => {
             value="anuragpandey.aryan@gmail.com"
           />
           <ContactLink
-            href="#"
+            href="https://www.linkedin.com/in/anurag-anand-b77797269/"
             label="LinkedIn"
-            value="https://www.linkedin.com/in/anurag-anand-b77797269/"
+            value="linkedin.com/in/anurag-anand-b77797269"
           />
           <ContactLink
-            href="#"
+            href="https://github.com/anuragged"
             label="GitHub"
-            value="https://github.com/anuragged"
+            value="github.com/anuragged"
           />
           <ContactLink
             href="tel:+919625150235"
             label="Mobile"
-            value="+91 96251-50235"
+            value="+91 96251 50235"
           />
 
         </div>

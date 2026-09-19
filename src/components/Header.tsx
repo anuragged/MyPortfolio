@@ -22,7 +22,9 @@ const Header: React.FC = () => {
 
   const navs = [
     { label: 'About', href: '#about' },
-    { label: 'Work', href: '#portfolio' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#portfolio' },
+    { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];
 

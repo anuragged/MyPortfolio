@@ -13,20 +13,19 @@ const resources = {
         blog: 'Blog'
       },
       hero: {
-        title: 'I Build Secure & Decentralized Futures',
-        subtitle: 'B.Tech CSE Student | Blockchain & Cybersecurity Specialist | Innovator & Developer',
+        title: 'Building Scalable AI & Systems',
+        subtitle: 'Software Engineer | Product Engineering | Backend / Full Stack',
         cta: "Let's Connect",
-        walletConnect: 'Connect Wallet'
+        walletConnect: 'Connect'
       },
       about: {
         title: 'About Me',
         name: 'Anurag Anand',
-        age: '22 years old',
         education: 'B.Tech in Computer Science Engineering (2022-2026)',
         university: 'BML Munjal University',
-        specialization: 'Specializing in Cybersecurity and Technology',
-        achievements: 'CGPA: 7.3/10. Experienced in cybersecurity, web development, and emerging technologies.',
-        traits: 'Honest, focused, detail-oriented, loves learning, and passionate about cybersecurity and innovation.'
+        specialization: 'Product Engineering, Backend Systems & AI Platforms',
+        achievements: '75% Merit Scholarship; Head of Design, led teams for TEDx, Hult Prize, and BMUMUN. Shipped core features for 25,000+ users at WeCatchAI.',
+        traits: 'Driven by high-concurrency architecture, product excellence, and clean engineering execution.'
       },
       services: {
         title: 'Services Offered',

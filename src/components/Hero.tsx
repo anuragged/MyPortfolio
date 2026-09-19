@@ -23,21 +23,24 @@ const Hero: React.FC = () => {
             <h2 className="text-white font-display text-4xl md:text-6xl font-semibold tracking-tight mb-2">
               Anurag Anand<span className="text-brand-main">.</span>
             </h2>
-            <span className="text-brand-light/80 font-mono text-sm md:text-base uppercase tracking-widest">
-              Software Engineer
-            </span>
+            <div className="flex flex-wrap items-center gap-2 text-brand-light/80 font-mono text-xs md:text-sm uppercase tracking-widest">
+              <span>Software Engineer</span>
+              <span className="text-brand-main">•</span>
+              <span>Product Engineering</span>
+              <span className="text-brand-main">•</span>
+              <span>Backend & Full Stack</span>
+            </div>
           </div>
 
           <h1 className="text-display-md md:text-display-lg font-bold text-white leading-[0.9] tracking-tighter opacity-90">
             Building<br />
-            Digital<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-light to-brand-main">Experience.</span>
+            Scalable<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-light to-brand-main">AI & Systems.</span>
           </h1>
 
           <div className="max-w-xl mt-12 md:mt-16">
             <p className="text-lg md:text-xl text-brand-muted leading-relaxed font-light">
-              Designing secure, scalable systems with a touch of elegance.
-              Backend architecture meets premium frontend engineering.
+              Architecting high-concurrency backend pipelines, AI platform features, and production-grade software serving tens of thousands of users.
             </p>
           </div>
         </motion.div>

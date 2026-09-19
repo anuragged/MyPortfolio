@@ -37,26 +37,31 @@ const Skills: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <SkillGroup
-              category="Core Engineering"
-              skills={['DSA', 'OOP', 'System Design', 'OS', 'DBMS']}
+              category="Core & AI"
+              skills={['DSA', 'System Design', 'DBMS', 'OOP', 'API Design', 'RAG', 'AI Integration']}
               colorClass="text-brand-main"
             />
             <SkillGroup
               category="Languages"
-              skills={['Java', 'Python', 'TypeScript', 'C++', 'SQL', 'Bash']}
+              skills={['Java', 'Python', 'C++', 'JavaScript', 'TypeScript', 'SQL', 'Kotlin', 'Dart']}
               colorClass="text-brand-light"
+            />
+            <SkillGroup
+              category="Frontend & Mobile"
+              skills={['React', 'Next.js', 'Flutter', 'Tailwind CSS']}
+              colorClass="text-brand-muted"
             />
           </div>
           <div>
             <SkillGroup
-              category="Backend & Cloud"
-              skills={['Node.js', 'Django', 'AWS', 'Docker', 'Kubernetes', 'Redis', 'PostgreSQL']}
-              colorClass="text-brand-muted"
+              category="Backend Engineering"
+              skills={['Node.js', 'Express', 'Django', 'FastAPI', 'Spring Boot', 'PostgreSQL', 'MSSQL', 'REST APIs']}
+              colorClass="text-brand-light"
             />
             <SkillGroup
-              category="Security (OWASP)"
-              skills={['Burp Suite', 'Cryptography', 'Secure SDLC', 'ZAP', 'Metasploit']}
-              colorClass="text-brand-light"
+              category="Cloud & DevOps"
+              skills={['AWS', 'Azure', 'Docker', 'Linux', 'CI/CD', 'Git']}
+              colorClass="text-brand-main"
             />
           </div>
         </div>
