@@ -13,7 +13,7 @@ const resources = {
         blog: 'Blog'
       },
       hero: {
-        title: 'Building Scalable AI & Systems',
+        title: 'Engineering Systems & Products.',
         subtitle: 'Software Engineer | Product Engineering | Backend / Full Stack',
         cta: "Let's Connect",
         walletConnect: 'Connect'

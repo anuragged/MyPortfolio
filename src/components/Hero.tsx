@@ -34,9 +34,9 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-display-md md:text-display-lg font-bold text-white leading-[0.92] tracking-tighter opacity-95">
-            Building<br />
-            Scalable<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-light to-brand-main">AI & Systems.</span>
+            Engineering<br />
+            Systems &<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-light to-brand-main">Products.</span>
           </h1>
 
           <div className="max-w-xl mt-6 md:mt-8">
