@@ -24,70 +24,65 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-10%' }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       onClick={onClick}
-      className="group relative border-b border-white/10 py-16 md:py-24 cursor-pointer"
+      className="group relative border-b border-white/10 py-12 md:py-20 cursor-pointer transition-colors duration-300 hover:bg-white/[0.015] px-4 md:px-6 rounded-2xl"
     >
-      {/* Hover Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/20 to-brand-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none blur-3xl" />
-
       <div className="grid lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Text Section - Adjusted to 6 columns for balance */}
+        {/* Text Section */}
         <div className="lg:col-span-6">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-sm font-mono text-brand-main uppercase tracking-widest bg-brand-main/10 px-3 py-1 rounded-full border border-brand-main/20">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-xs font-mono text-brand-main uppercase tracking-widest bg-brand-main/10 px-3 py-1 rounded-full border border-brand-main/20">
               {project.category}
             </span>
             {project.stats && (
-              <span className="text-sm font-mono text-secondary">
+              <span className="text-xs font-mono text-secondary">
                 {project.stats}
               </span>
             )}
           </div>
 
-          <h3 className="text-5xl md:text-7xl font-display font-bold text-white mb-8 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-light transition-all duration-300">
+          <h3 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 group-hover:text-brand-main transition-colors duration-300">
             {project.title}
-            <span className="text-brand-main hidden group-hover:inline">.</span>
+            <span className="text-brand-main">.</span>
           </h3>
 
-          <p className="text-xl text-secondary font-light max-w-2xl leading-relaxed mb-8 line-clamp-3">
+          <p className="text-base md:text-lg text-secondary font-light max-w-2xl leading-relaxed mb-6 line-clamp-3">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-6">
             {project.tech.map((t: string) => (
-              <span key={t} className="text-sm font-mono text-secondary/60">
+              <span key={t} className="text-xs font-mono text-brand-light/70 bg-white/5 px-2.5 py-1 rounded border border-white/5">
                 {t}
               </span>
             ))}
           </div>
 
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2 text-brand-light hover:text-white transition-colors">
-              <span className="text-lg font-medium">View Details</span>
-              <ArrowUpRight className="w-5 h-5" />
-            </span>
+          <div className="flex items-center gap-2 text-brand-light group-hover:text-white transition-colors">
+            <span className="text-sm font-mono uppercase tracking-wider">View Project Architecture</span>
+            <ArrowUpRight className="w-4 h-4 text-brand-main group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </div>
         </div>
 
-        {/* Project Preview Image - Expanded to 6 columns */}
-        <div className="lg:col-span-6 hidden lg:block opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
-          <div className="relative rounded-lg overflow-hidden border border-white/10 aspect-[16/10] bg-surface shadow-2xl">
-            <div className="absolute inset-0 bg-brand-main/10 animate-pulse" />
+        {/* Project Preview Image */}
+        <div className="lg:col-span-6 hidden lg:block opacity-90 group-hover:opacity-100 transition-all duration-300">
+          <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-[16/10] bg-surface/90 shadow-2xl group-hover:border-brand-main/40 transition-colors">
             {project.image ? (
               <img
                 src={project.image}
                 alt={project.title}
-                className={`absolute inset-0 w-full h-full ${project.imageFit || 'object-cover'
-                  } opacity-90 group-hover:scale-105 transition-transform duration-700`}
+                loading="lazy"
+                className={`w-full h-full ${project.imageFit || 'object-cover'} group-hover:scale-102 transition-transform duration-500`}
               />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand-dark/20 to-brand-main/20">
+              <div className="w-full h-full flex flex-col items-center justify-center bg-white/[0.02]">
+                <span className="text-3xl mb-2 opacity-40">⚡</span>
                 <span className="font-mono text-xs text-brand-main uppercase tracking-widest">
-                  Preview Coming Soon
+                  Architecture Specs Available
                 </span>
               </div>
             )}

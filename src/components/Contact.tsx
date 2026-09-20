@@ -20,9 +20,14 @@ const ContactLink = ({ label, href, value }: { label: string, href: string, valu
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-32 bg-background relative overflow-hidden">
-      {/* Footer Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-main/5 blur-[100px] pointer-events-none" />
+    <section id="contact" className="py-28 bg-transparent relative overflow-hidden">
+      {/* Zero-cost footer glow */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] pointer-events-none opacity-40"
+        style={{
+          background: 'radial-gradient(ellipse at bottom, rgba(136, 189, 242, 0.15) 0%, transparent 70%)',
+        }}
+      />
 
       <div className="container-luxury relative z-10">
         <div className="mb-24">

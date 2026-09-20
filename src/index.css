@@ -49,7 +49,24 @@
   }
 
   .glass-dark {
-    @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl;
+    @apply bg-white/[0.02] border border-white/[0.06] backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply bg-surface/80 border border-white/[0.08] backdrop-blur-md hover:border-brand-main/30 transition-all duration-300;
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer utilities {
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
   }
 }
 

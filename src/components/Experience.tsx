@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface ExperienceData {
     company: string;
@@ -20,24 +20,16 @@ const ExperienceItem: React.FC<ExperienceData> = ({
     bullets,
     tags
 }) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "center center"]
-    });
-
-    const opacity = useTransform(scrollYProgress, [0, 1], [0.25, 1]);
-    const x = useTransform(scrollYProgress, [0, 1], [40, 0]);
-    const scale = useTransform(scrollYProgress, [0, 1], [0.97, 1]);
-
     return (
         <motion.div
-            ref={ref}
-            style={{ opacity, x, scale }}
-            className="relative pl-8 md:pl-0 border-l md:border-l-0 border-white/10 md:grid md:grid-cols-12 gap-12 items-start py-16 group"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative pl-8 md:pl-0 border-l md:border-l-0 border-white/10 md:grid md:grid-cols-12 gap-12 items-start py-8 group"
         >
             {/* Desktop Period & Metadata Column */}
-            <div className="hidden md:block md:col-span-3 text-right">
+            <div className="hidden md:block md:col-span-3 text-right pt-2">
                 <span className="font-mono text-sm text-brand-muted uppercase tracking-widest sticky top-32 transition-colors group-hover:text-brand-main block mb-2">
                     {period}
                 </span>
@@ -56,49 +48,51 @@ const ExperienceItem: React.FC<ExperienceData> = ({
                 </span>
             </div>
 
-            {/* Main Content Column */}
+            {/* Main Content Card Column */}
             <div className="md:col-span-9 relative">
                 {/* Glowing Dot on Desktop Timeline */}
-                <div className="absolute -left-[53px] top-2 w-3 h-3 rounded-full bg-brand-main opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block shadow-[0_0_15px_3px_rgba(136,189,242,0.4)]" />
+                <div className="absolute -left-[53px] top-6 w-3 h-3 rounded-full bg-brand-main/70 group-hover:bg-brand-main group-hover:scale-125 transition-all duration-300 hidden md:block" />
 
-                <div className="flex flex-wrap items-baseline justify-between gap-4 mb-2">
-                    <h4 className="text-3xl md:text-5xl font-display font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-light group-hover:to-brand-main transition-all duration-300">
-                        {company}
-                    </h4>
-                    {type && (
-                        <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-brand-light">
-                            {type}
-                        </span>
+                <div className="glass-card p-6 md:p-8 rounded-2xl">
+                    <div className="flex flex-wrap items-baseline justify-between gap-4 mb-2">
+                        <h4 className="text-2xl md:text-4xl font-display font-medium text-white group-hover:text-brand-main transition-colors duration-300">
+                            {company}
+                        </h4>
+                        {type && (
+                            <span className="px-3 py-1 bg-brand-main/10 border border-brand-main/20 rounded-full text-xs font-mono text-brand-light">
+                                {type}
+                            </span>
+                        )}
+                    </div>
+
+                    <h5 className="text-base md:text-xl text-brand-muted mb-6 font-light">
+                        {role}
+                    </h5>
+
+                    {/* Achievement Bullets */}
+                    <ul className="space-y-3 mb-6 max-w-3xl">
+                        {bullets.map((bullet, idx) => (
+                            <li key={idx} className="text-secondary/90 font-light text-sm md:text-base leading-relaxed flex items-start gap-3">
+                                <span className="text-brand-main mt-1.5 text-xs select-none">▸</span>
+                                <span>{bullet}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    {/* Tech & Impact Tags */}
+                    {tags && tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+                            {tags.map((tag, idx) => (
+                                <span
+                                    key={idx}
+                                    className="px-2.5 py-1 bg-white/[0.03] text-brand-light/70 border border-white/5 rounded text-xs font-mono"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
                     )}
                 </div>
-
-                <h5 className="text-lg md:text-2xl text-brand-muted mb-6 font-light flex items-center gap-3">
-                    {role}
-                </h5>
-
-                {/* Achievement Bullets */}
-                <ul className="space-y-3.5 mb-8 max-w-3xl">
-                    {bullets.map((bullet, idx) => (
-                        <li key={idx} className="text-secondary/90 font-light text-base md:text-lg leading-relaxed flex items-start gap-3">
-                            <span className="text-brand-main mt-2 text-xs select-none">▸</span>
-                            <span>{bullet}</span>
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Tech & Impact Tags */}
-                {tags && tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 pt-2">
-                        {tags.map((tag, idx) => (
-                            <span
-                                key={idx}
-                                className="px-2.5 py-1 bg-brand-main/5 text-brand-light/70 border border-brand-main/10 rounded text-xs font-mono"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
             </div>
         </motion.div>
     );
@@ -161,18 +155,23 @@ const Experience: React.FC = () => {
     ];
 
     return (
-        <section id="experience" className="bg-background py-32 relative overflow-hidden">
-            {/* Subtle Background Blob */}
-            <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-brand-dark/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+        <section id="experience" className="bg-transparent py-28 relative overflow-hidden">
+            {/* Zero-blur ambient accent */}
+            <div
+                className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20"
+                style={{
+                    background: 'radial-gradient(circle, rgba(136, 189, 242, 0.15) 0%, transparent 70%)',
+                }}
+            />
 
             <div className="container-luxury relative z-10">
-                <div className="mb-32">
-                    <span className="text-sm font-mono text-brand-main uppercase tracking-widest border-b border-brand-main/20 pb-2 block w-fit">
+                <div className="mb-20">
+                    <span className="text-xs font-mono text-brand-main uppercase tracking-widest border-b border-brand-main/20 pb-2 block w-fit">
                         02 / Experience
                     </span>
                 </div>
 
-                <div className="space-y-12">
+                <div className="space-y-6">
                     {experiences.map((exp, index) => (
                         <ExperienceItem key={index} {...exp} />
                     ))}
