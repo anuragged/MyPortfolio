@@ -8,7 +8,7 @@ interface Project {
   description: string;
   bullets?: string[];
   tech: string[];
-  links: { github?: string; live?: string; apk?: string };
+  links: { github?: string; live?: string; apk?: string; liveLabel?: string };
   stats?: string;
   image?: string;
   imageFit?: string; // 'object-cover' | 'object-contain'
@@ -22,6 +22,8 @@ const ProjectCard = ({
   project: Project;
   onClick: () => void;
 }) => {
+  const targetUrl = project.links.live || project.links.github;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -32,24 +34,54 @@ const ProjectCard = ({
       className="glass-card p-5 rounded-2xl flex flex-col justify-between group cursor-pointer hover:border-brand-main/50 transition-all duration-300 relative overflow-hidden h-full"
     >
       <div>
-        {/* Preview Banner */}
-        <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface/90 border border-white/5 mb-4 group-hover:border-brand-main/30 transition-colors">
-          {project.image ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              className={`w-full h-full ${project.imageFit || 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
-            />
-          ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-white/[0.02] text-white/30">
-              <span className="text-2xl mb-1">⚡</span>
-              <span className="font-mono text-[10px] text-brand-main/70 uppercase tracking-widest">
-                Architecture Specs
-              </span>
+        {/* Preview Banner - Clicking directly opens website/github */}
+        {targetUrl ? (
+          <a
+            href={targetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="block relative rounded-xl overflow-hidden aspect-[16/9] bg-surface/90 border border-white/5 mb-4 group/img hover:border-brand-main/40 transition-all cursor-pointer"
+            title={`Open ${project.title} ${project.links.live ? (project.links.liveLabel || 'Website') : 'GitHub'}`}
+          >
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className={`w-full h-full ${project.imageFit || 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-white/[0.02] text-white/30">
+                <span className="text-2xl mb-1">⚡</span>
+                <span className="font-mono text-[10px] text-brand-main/70 uppercase tracking-widest">
+                  Architecture Specs
+                </span>
+              </div>
+            )}
+            <div className="absolute top-2.5 right-2.5 p-1.5 rounded-full bg-black/70 backdrop-blur-sm text-white/80 opacity-0 group-hover/img:opacity-100 transition-opacity">
+              <ArrowUpRight className="w-3.5 h-3.5 text-brand-main" />
             </div>
-          )}
-        </div>
+          </a>
+        ) : (
+          <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface/90 border border-white/5 mb-4 group-hover:border-brand-main/30 transition-colors">
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className={`w-full h-full ${project.imageFit || 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-white/[0.02] text-white/30">
+                <span className="text-2xl mb-1">⚡</span>
+                <span className="font-mono text-[10px] text-brand-main/70 uppercase tracking-widest">
+                  Architecture Specs
+                </span>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Category & Stats Badges */}
         <div className="flex items-center justify-between gap-2 mb-2.5">
@@ -106,6 +138,7 @@ const ProjectModal = ({
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const gallery = project.gallery?.length ? project.gallery : project.image ? [project.image] : [];
+  const targetUrl = project.links.live || project.links.github;
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -147,18 +180,45 @@ const ProjectModal = ({
         <div className="w-full md:w-7/12 bg-black relative flex items-center justify-center p-4 md:p-8 overflow-hidden h-[40vh] md:h-auto">
           {gallery.length > 0 ? (
             <div className="relative w-full h-full flex items-center justify-center">
-              <AnimatePresence mode='wait'>
-                <motion.img
-                  key={currentImageIndex}
-                  src={gallery[currentImageIndex]}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  alt={`${project.title} view ${currentImageIndex + 1}`}
-                  className={`max-w-full max-h-full ${project.imageFit || 'object-contain'} shadow-lg rounded-md`}
-                />
-              </AnimatePresence>
+              {targetUrl ? (
+                <a
+                  href={targetUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative max-w-full max-h-full flex items-center justify-center group/modalimg cursor-pointer"
+                  title={`Open ${project.title} ${project.links.live ? (project.links.liveLabel || 'Website') : 'GitHub'}`}
+                >
+                  <AnimatePresence mode='wait'>
+                    <motion.img
+                      key={currentImageIndex}
+                      src={gallery[currentImageIndex]}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                      alt={`${project.title} view ${currentImageIndex + 1}`}
+                      className={`max-w-full max-h-full ${project.imageFit || 'object-contain'} shadow-lg rounded-md group-hover/modalimg:opacity-90 transition-opacity`}
+                    />
+                  </AnimatePresence>
+                  <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md text-white text-xs font-mono flex items-center gap-1.5 opacity-0 group-hover/modalimg:opacity-100 transition-opacity border border-white/10">
+                    <span>Visit {project.links.live ? (project.links.liveLabel || 'Website') : 'GitHub'}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-brand-main" />
+                  </div>
+                </a>
+              ) : (
+                <AnimatePresence mode='wait'>
+                  <motion.img
+                    key={currentImageIndex}
+                    src={gallery[currentImageIndex]}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    alt={`${project.title} view ${currentImageIndex + 1}`}
+                    className={`max-w-full max-h-full ${project.imageFit || 'object-contain'} shadow-lg rounded-md`}
+                  />
+                </AnimatePresence>
+              )}
 
               {gallery.length > 1 && (
                 <>
@@ -237,7 +297,7 @@ const ProjectModal = ({
           <div className="flex flex-col gap-3 mt-auto">
             {project.links.live && (
               <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full py-4 bg-brand-main text-background font-medium rounded hover:bg-brand-light transition-colors">
-                <span>Live Demo</span>
+                <span>{project.links.liveLabel || 'Website'}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             )}
@@ -277,6 +337,7 @@ const Portfolio: React.FC = () => {
       tech: ['GitHub Apps API', 'Next.js 16', 'TypeScript', 'Git Automation', 'Markdown AST'],
       links: {
         live: 'https://tzylo.com',
+        liveLabel: 'Website',
       },
       stats: '0-Config • <20m Onboarding',
       image: '/Images/tzylo-preview.png',
