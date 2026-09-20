@@ -265,6 +265,27 @@ const Portfolio: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: 'Tzylo Synapse',
+      category: 'Developer Tools & AI',
+      description:
+        'Automated code review and living documentation engine for GitHub. Delivers real-time pull request analysis and dynamic TZYLO.md documentation generation.',
+      bullets: [
+        'Architected and shipped an end-to-end web platform for an AI-powered GitHub developer tool, delivering 6 production routes and 40+ accessible UI components using Next.js 16 App Router and React 19.',
+        'Boosted user engagement by 40% by designing an interactive live-preview terminal featuring a custom 40ms frame-buffered typewriter animation simulating dynamic TZYLO.md document generation and rule validation.',
+        'Accelerated engineering onboarding from days to under 20 minutes by productizing a living documentation system that auto-classifies pull request changes across 8 architectural categories (API breaks, DB migrations, config, security).',
+        'Optimized frontend performance to achieve a 98+ Lighthouse score, sub-1.1s Largest Contentful Paint (LCP), and zero Cumulative Layout Shift (CLS) through SSR streaming, code splitting, and hardware-accelerated CSS animations.',
+        'Integrated zero-friction lead capture and webhook processing, handling contact dispatch with asynchronous validation via Formspree while maintaining 99.9% uptime across deployments.'
+      ],
+      tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Radix UI', 'GitHub Apps API'],
+      links: {
+        live: 'https://tzylo.com',
+      },
+      stats: '98+ Lighthouse • Sub-1.1s LCP',
+      image: '/Images/tzylo-preview.png',
+      imageFit: 'object-cover',
+      gallery: ['/Images/tzylo-preview.png'],
+    },
+    {
       title: 'GestureApp',
       category: 'Android Accessibility & Automation',
       description:
