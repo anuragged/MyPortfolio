@@ -20,12 +20,6 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-6 md:space-y-8"
         >
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Open to Opportunities • Product Engineering & AI Systems</span>
-          </div>
-
           <div className="overflow-hidden">
             <h2 className="text-white font-display text-4xl md:text-6xl font-semibold tracking-tight mb-3">
               Anurag Anand<span className="text-brand-main">.</span>

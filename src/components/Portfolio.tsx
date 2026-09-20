@@ -24,69 +24,73 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       onClick={onClick}
-      className="group relative border-b border-white/10 py-12 md:py-20 cursor-pointer transition-colors duration-300 hover:bg-white/[0.015] px-4 md:px-6 rounded-2xl"
+      className="glass-card p-5 rounded-2xl flex flex-col justify-between group cursor-pointer hover:border-brand-main/50 transition-all duration-300 relative overflow-hidden h-full"
     >
-      <div className="grid lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Text Section */}
-        <div className="lg:col-span-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-mono text-brand-main uppercase tracking-widest bg-brand-main/10 px-3 py-1 rounded-full border border-brand-main/20">
-              {project.category}
-            </span>
-            {project.stats && (
-              <span className="text-xs font-mono text-secondary">
-                {project.stats}
+      <div>
+        {/* Preview Banner */}
+        <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface/90 border border-white/5 mb-4 group-hover:border-brand-main/30 transition-colors">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+              className={`w-full h-full ${project.imageFit || 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-white/[0.02] text-white/30">
+              <span className="text-2xl mb-1">⚡</span>
+              <span className="font-mono text-[10px] text-brand-main/70 uppercase tracking-widest">
+                Architecture Specs
               </span>
-            )}
-          </div>
-
-          <h3 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 group-hover:text-brand-main transition-colors duration-300">
-            {project.title}
-            <span className="text-brand-main">.</span>
-          </h3>
-
-          <p className="text-base md:text-lg text-secondary font-light max-w-2xl leading-relaxed mb-6 line-clamp-3">
-            {project.description}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tech.map((t: string) => (
-              <span key={t} className="text-xs font-mono text-brand-light/70 bg-white/5 px-2.5 py-1 rounded border border-white/5">
-                {t}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2 text-brand-light group-hover:text-white transition-colors">
-            <span className="text-sm font-mono uppercase tracking-wider">View Project Architecture</span>
-            <ArrowUpRight className="w-4 h-4 text-brand-main group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </div>
+            </div>
+          )}
         </div>
 
-        {/* Project Preview Image */}
-        <div className="lg:col-span-6 hidden lg:block opacity-90 group-hover:opacity-100 transition-all duration-300">
-          <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-[16/10] bg-surface/90 shadow-2xl group-hover:border-brand-main/40 transition-colors">
-            {project.image ? (
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-                className={`w-full h-full ${project.imageFit || 'object-cover'} group-hover:scale-102 transition-transform duration-500`}
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-white/[0.02]">
-                <span className="text-3xl mb-2 opacity-40">⚡</span>
-                <span className="font-mono text-xs text-brand-main uppercase tracking-widest">
-                  Architecture Specs Available
-                </span>
-              </div>
-            )}
-          </div>
+        {/* Category & Stats Badges */}
+        <div className="flex items-center justify-between gap-2 mb-2.5">
+          <span className="text-[11px] font-mono text-brand-main uppercase tracking-wider bg-brand-main/10 px-2.5 py-0.5 rounded-full border border-brand-main/20 truncate">
+            {project.category}
+          </span>
+          {project.stats && (
+            <span className="text-[11px] font-mono text-secondary shrink-0">
+              {project.stats}
+            </span>
+          )}
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl font-display font-semibold text-white mb-2 group-hover:text-brand-main transition-colors flex items-center justify-between">
+          <span>{project.title}</span>
+          <ArrowUpRight className="w-4 h-4 text-brand-main opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+        </h3>
+
+        {/* Short Description */}
+        <p className="text-sm text-secondary font-light leading-relaxed mb-4 line-clamp-2">
+          {project.description}
+        </p>
+      </div>
+
+      {/* Tech Stack Pills */}
+      <div>
+        <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+          {project.tech.slice(0, 4).map((t: string) => (
+            <span
+              key={t}
+              className="text-[10px] font-mono text-brand-light/70 bg-white/5 px-2 py-0.5 rounded border border-white/5"
+            >
+              {t}
+            </span>
+          ))}
+          {project.tech.length > 4 && (
+            <span className="text-[10px] font-mono text-secondary/60 px-1 py-0.5">
+              +{project.tech.length - 4}
+            </span>
+          )}
         </div>
       </div>
     </motion.div>
@@ -344,15 +348,15 @@ const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section id="portfolio" className="bg-background py-32 relative">
+    <section id="portfolio" className="bg-transparent py-24 md:py-28 relative">
       <div className="container-luxury">
-        <div className="mb-24">
-          <span className="text-xs font-mono text-secondary uppercase tracking-widest border-b border-subtle pb-2 block w-fit">
-            03 / Selected Works
+        <div className="mb-14">
+          <span className="text-xs font-mono text-brand-main uppercase tracking-widest border-b border-brand-main/20 pb-2 block w-fit">
+            03 / Projects
           </span>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {projects.map((p, i) => (
             <ProjectCard
               key={i}

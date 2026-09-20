@@ -105,7 +105,7 @@ const Experience: React.FC = () => {
             role: "Software Engineer | Product & Growth",
             type: "Full-time",
             location: "Seattle, WA, US | Remote",
-            period: "Jun 2026 – Present",
+            period: "Jun 2026 - Present",
             bullets: [
                 "Architected and shipped 8+ core product features end-to-end across Human Review, community voting, leaderboard, rewards, and AI humanization on a 25,000+ user AI platform.",
                 "Engineered a multi-queue rewards distribution system processing $2,000+ monthly across 20,000+ users, with fraud detection, multiple rate redemption logic, and 4 payout pipelines, reducing manual admin overhead by 80%.",
@@ -120,7 +120,7 @@ const Experience: React.FC = () => {
             role: "Software Engineer Intern",
             type: "Internship",
             location: "Remote",
-            period: "Feb 2026 – May 2026",
+            period: "Feb 2026 - May 2026",
             bullets: [
                 "Shipped 15+ production features in 90 days, taking ownership from requirements to deployment and iteration at an early-stage AI startup.",
                 "Built an AI grammar auditor with GPT-4o-mini, covering 15+ linguistic error categories through a 2-pass AI lookup table and regex correction pipeline.",
@@ -134,7 +134,7 @@ const Experience: React.FC = () => {
             role: "Mobile Application Developer Intern",
             type: "Internship",
             location: "Remote, India",
-            period: "Dec 2025 – Feb 2026",
+            period: "Dec 2025 - Feb 2026",
             bullets: [
                 "Developed and maintained production grade Flutter applications end-to-end, from feature requirements through implementation, testing, release, and maintenance.",
                 "Owned the end-to-end iOS application lifecycle, with hands-on control over development, testing, signing, deployment, versioning, compliance, and release management."
@@ -146,7 +146,7 @@ const Experience: React.FC = () => {
             role: "Information Technology Intern",
             type: "Internship",
             location: "Gurugram, Haryana, India",
-            period: "Jun 2024 – Jul 2024",
+            period: "Jun 2024 - Jul 2024",
             bullets: [
                 "Developed backend and frontend components for SecureFit, aimed at serving 10,000+ users, and optimized APIs to sub-200ms latency using AES encryption for secure handling of sensitive healthcare information."
             ],

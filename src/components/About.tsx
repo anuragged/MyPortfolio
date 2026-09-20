@@ -28,7 +28,7 @@ const About: React.FC = () => {
                   I am a product-focused software engineer with deep foundations in backend engineering, AI pipelines, and high-concurrency systems. At <strong className="text-white">WeCatchAI</strong>, I architect and ship core features across human review, community voting, and automated payouts for an active base of <strong className="text-white">25,000+ users</strong>.
                 </p>
                 <p>
-                  My engineering sweet spot lies at the intersection of robust backend architecture and scalable product execution—ranging from multi-queue payout engines processing thousands in monthly rewards, to 2-pass AI grammar correction pipelines, to sub-200ms latency APIs secured with AES encryption.
+                  My engineering sweet spot lies at the intersection of robust backend architecture and scalable product execution, ranging from multi-queue payout engines processing thousands in monthly rewards, to 2-pass AI grammar correction pipelines, to sub-200ms latency APIs secured with AES encryption.
                 </p>
               </div>
 
@@ -49,7 +49,7 @@ const About: React.FC = () => {
                       </p>
                     </div>
                     <span className="font-mono text-sm text-brand-muted shrink-0">
-                      2022 – 2026
+                      2022 - 2026
                     </span>
                   </div>
 
