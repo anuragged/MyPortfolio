@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,30 +8,6 @@ import Contact from './components/Contact';
 import Background from './components/Background';
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 0.8,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
-    });
-
-    let reqId: number;
-    function raf(time: number) {
-      lenis.raf(time);
-      reqId = requestAnimationFrame(raf);
-    }
-
-    reqId = requestAnimationFrame(raf);
-
-    return () => {
-      cancelAnimationFrame(reqId);
-      lenis.destroy();
-    };
-  }, []);
 
   return (
     <div className="bg-background min-h-screen text-primary selection:bg-white selection:text-black font-sans relative">

@@ -2,36 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header: React.FC = () => {
-  const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          setIsScrolled(currentScrollY > 40);
-
-          if (currentScrollY > 200 && currentScrollY > lastScrollY) {
-            setHidden(true);
-          } else {
-            setHidden(false);
-          }
-          setLastScrollY(currentScrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
-
   const navs = [
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
@@ -41,19 +11,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <motion.header
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: '-100%' }
-      }}
-      animate={hidden ? 'hidden' : 'visible'}
-      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'py-4 bg-background/85 backdrop-blur-md border-b border-white/[0.06] shadow-lg shadow-black/20'
-          : 'py-6 md:py-8 bg-transparent'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 py-4 bg-background/80 backdrop-blur-md border-b border-white/[0.06] shadow-sm shadow-black/20">
       <div className="container-luxury flex justify-between items-center">
         <a href="#" className="flex items-center gap-2 group">
           <span className="text-xl font-display font-bold text-white tracking-tighter group-hover:text-brand-main transition-colors">
@@ -87,7 +45,7 @@ const Header: React.FC = () => {
           Contact
         </a>
       </div>
-    </motion.header>
+    </header>
   );
 };
 
